@@ -117,6 +117,7 @@ def infer_topset_from_scratch(
         if not available_idtypes:
             continue
 
+        print(node_t)
         op_param_n = node_t.get_num_var_param()
         op_params = [z3.Int("v%s-%s" % (idx, k)) for k in range(op_param_n)]
         op = node_t(*op_params)

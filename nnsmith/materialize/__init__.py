@@ -237,6 +237,12 @@ class Model(ABC):
                 # XLA must align device location of eager mode execution.
                 return TFModelCUDA
             return TFModelCPU
+        elif name == "jax":
+            from nnsmith.materialize.jax import JAXModelCPU, JAXModelGPU
+
+            if backend_target == "gpu" or backend_target == "cuda":
+                return JAXModelGPU
+            return JAXModelCPU
 
         raise ValueError(
             f"Unsupported: ModelType={name} for BackendTarget={backend_target}"

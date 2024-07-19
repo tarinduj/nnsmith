@@ -162,3 +162,7 @@ cython_debug/
 # Exclude
 !requirements/**/*.txt
 .DS_Store
+
+#model dumps
+nan_scenario/
+nan_scenario_jax/

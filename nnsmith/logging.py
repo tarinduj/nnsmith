@@ -11,3 +11,4 @@ CORE_LOG = logging.getLogger("core")
 
 TF_LOG = logging.getLogger("gen|tf")
 TORCH_LOG = logging.getLogger("gen|torch")
+JAX_LOG = logging.getLogger("gen|jax")

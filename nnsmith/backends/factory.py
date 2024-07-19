@@ -427,5 +427,9 @@ class BackendFactory(ABC):
             from nnsmith.backends.pt2 import PT2
 
             return PT2(target=target, optmax=optmax, ad=ad, **kwargs)
+        elif name == "jax_xla":
+            from nnsmith.backends.jax_xla import JAXLA
+            
+            return JAXLA(target=target, optmax=optmax, **kwargs)
         else:
             raise ValueError(f"unknown backend: {name}")
